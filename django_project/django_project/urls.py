@@ -15,7 +15,11 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from django_project import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('aboutus', views.aboutUs),
+    path('aboutdetails<int:detailid>', views.aboutdetails) 
+   # one can use use int, slug(gh-jkl), str and even nothing when we are not sure about the type in place of int
 ]
